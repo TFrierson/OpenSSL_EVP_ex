@@ -1,0 +1,28 @@
+Directions to get the example code from https://wiki.openssl.org/index.php/EVP_Symmetric_Encryption_and_Decryption working in Visual Studio 2019 using C/C++:
+ 
+1. Necessary includes is in the source file.
+
+2. Add the OpenSSL/Include (or equivalent) folder to Project -> (Your Project's name) Properties -> C/C++ -> Additional Include Directories.
+
+3. Add the OpenSSL/Lib folder to Project -> (Your Project's name) Properties -> Linker -> General -> Additional Library Directories.
+
+4. Add ws2_32.lib, libcrypto.lib and libssl.lib to Project -> (Your Project's name) Properties -> Linker -> Input -> Additional Dependencies.
+
+5. Add _CRT_SECURE_NO_WARNINGS to Project -> (Your Project's name) Properties -> C/C++ -> Preprocessor -> Preprocessor Definitions (required for the necessary OpenSSL.applink.c file to compile with the project).
+
+
+
+Output is: 
+
+
+Cipher text is: 
+
+0000 - e0 6f 63 a7 11 e8 b7 aa-9f 94 40 10 7d 46 80 a1   .oc.......@.}F..
+0010 - f6 2d 65 e2 b6 ff 1c 11-06 9c 4b 6e c4 2b b6 20   .-e.......Kn.+. 
+0020 - c8 ec 3b e7 85 b5 af 9f-67 be 82 58 4e 37 7b 28   ..;.....g..XN7{(
+
+Decrypted text is: 
+
+0000 - 54 68 65 20 71 75 69 63-6b 20 62 72 6f 77 6e 20   The quick brown 
+0010 - 66 6f 78 20 6a 75 6d 70-65 64 20 6f 76 65 72 20   fox jumped over 
+0020 - 74 68 65 20 6c 61 7a 79-20 64 6f 67 2e            the lazy dog.
